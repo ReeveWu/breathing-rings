@@ -6,8 +6,10 @@ function setup() {
 
 function draw() {
 	background(30)
-	rotateX(map(mouseY, 0, windowHeight, 70, -70))
-	rotateY(map(mouseX, 0, windowWidth, -45, 45))
+	rotateX(60)
+	rotateY(30)
+	// rotateX(map(mouseY, 0, windowHeight, 70, -70))
+	// rotateY(map(mouseX, 0, windowWidth, -45, 45))
 	noFill()
 	stroke(255)
 	for (let i=0; i<30; i++) {	
