@@ -6,27 +6,25 @@ function setup() {
 
 function draw() {
 	background(30)
-	rotateX(60)
-	rotateY(map(sin(frameCount*0.5), -1, 1, -45, 45))
-	
+	rotateX(map(mouseY, 0, windowHeight, 70, -70))
+	rotateY(map(mouseX, 0, windowWidth, -45, 45))
 	noFill()
 	stroke(255)
-	
-	for (var i=0; i<30; i++) {		
-		let r = map(sin(frameCount), -1, 1, 50, 255)
-		let g = map(i, 0, 20, 50, 255)
-		let b = map(cos(frameCount), -1, 1, 50, 255)
+	for (let i=0; i<30; i++) {	
+		
+		const r = map(sin(mouseY), -1, 1, 50, 255)
+		const g = map(i, 0, 20, 50, 255)
+		const b = map(cos(mouseX), -1, 1, 50, 255)
 		
 		stroke(r, g, b)
 		
 		beginShape()
-		for (var j=0; j<360; j+=map(sin(frameCount), -1, 1, 5, 120)) {
-			let rad = i * 10
-			let x = rad * cos(j)
-			let y = rad * sin(j)
-			let z = sin(frameCount*2 + i * 10) * 70
-			
-			vertex(x, y, z+100)
+		for (let j=0; j<360; j+=map(sin(frameCount), -1, 1, 5, 120)) {
+			const rad = i * 10
+			const x = rad * cos(j)
+			const y = rad * sin(j)
+			const z = sin(frameCount*2 + i * 10) * 70
+			vertex(x, y, z)
 		}
 		endShape(CLOSE)
 	}
