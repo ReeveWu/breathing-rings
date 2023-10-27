@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -7,14 +7,13 @@ on:
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
     steps:
-    - name: Checkout repository
-#      run: |
-#        git config --global user.name "${{ github.actor }}"
-#        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-#        git init
-#        git add .
-#        git commit -m "Auto deploy to GitHub Pages"
-#        git push
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
