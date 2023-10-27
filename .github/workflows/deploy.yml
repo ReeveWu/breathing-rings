@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git init
-        git add .
-        git commit -m "Auto deploy to GitHub Pages"
-        git push
+#      run: |
+#        git config --global user.name "${{ github.actor }}"
+#        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+#        git init
+#        git add .
+#        git commit -m "Auto deploy to GitHub Pages"
+#        git push
